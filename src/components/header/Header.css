@@ -1,0 +1,45 @@
+.header_wrapper {
+    background-color: black;
+    display: flex; 
+    align-items: center; 
+    height: 72px;
+}
+
+.header_inner_content {
+  width: 100%;
+  max-width: 1080px;
+  
+}
+.navbar_links .navlink {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+  color: #adadad;
+  transition: all 0.4s ease-in-out;
+
+}
+.navbar_links .navlink:hover {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+  color: #ffffff;
+}
+
+.joinBeta_btn button {
+  color: #ffffff;
+  width: 109px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 80px;
+  opacity: 0.85;
+  transition: all 0.4s ease-in-out;
+  font-size: 14px;
+}
+.joinBeta_btn button:hover {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+ 
+  opacity: 1;
+}
