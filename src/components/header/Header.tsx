@@ -9,14 +9,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = width <= 810;
 
-  // Close menu when window is resized above mobile breakpoint
   useEffect(() => {
     if (!isMobile && isOpen) {
       setIsOpen(false);
     }
   }, [isMobile, isOpen]);
 
-  // Prevent body scrolling when menu is open
   useEffect(() => {
     if (isOpen && isMobile) {
       document.body.style.overflow = "hidden";
@@ -33,7 +31,6 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  // Updated variants for top-down shutter animation
   const menuVariants = {
     closed: {
       height: 0,
