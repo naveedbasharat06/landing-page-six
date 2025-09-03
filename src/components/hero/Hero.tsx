@@ -11,7 +11,6 @@ import hardward_uni from "../../images/harward_uni.avif";
 import menchester_institute from "../../images/menchester_institute.avif";
 import pen_uni from "../../images/pen_uni.avif";
 import stanford_uni from "../../images/stanford_uni.avif";
-import Platfrom from "../platform/Platfrom";
 
 const trusted_partners = [
   {
@@ -60,29 +59,40 @@ const Hero = () => {
       <div className="textContent_section">
         <span className="hero_joinBeta_btn">
           <motion.button className="relative h-[33.5px] border border-white/30 font-medium text-[14.4px] rounded-full overflow-hidden px-[21.8px]">
-            <span className="relative inline-block z-10">
-              <span className="relative z-10 flex items-center">
-                get early access <RightOutlined className="ml-2 w-4" />
+            <span className="relative inline-flex items-center z-10">
+              {/* Text wrapper with overflow hidden */}
+              <span className="relative inline-block overflow-hidden rounded-full">
+                <span className="relative z-10">get early access</span>
+
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                  style={{
+                    WebkitMaskImage: `
+      linear-gradient(to right, transparent 0%, white 30%, white 40%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, white 30%, white 40%, transparent 100%)
+    `,
+                    maskImage: `
+      linear-gradient(to right, transparent 0%, white 35%, white 65%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, white 35%, white 65%, transparent 100%)
+    `,
+                    WebkitMaskComposite: "destination-in",
+                    maskComposite: "intersect",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "200% 100%",
+                    maskSize: "200% 100%",
+                  }}
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "100%" }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                />
               </span>
-              <motion.span
-                className="absolute inset-y-[0px] inset-x-4
-                   left-4 right-4 w-[100px]
-                   overflow-hidden
-                   bg-gradient-to-r from-transparent via-white/30 to-transparent 
-                   rounded-sm"
-                style={{
-                  maskImage:
-                    "linear-gradient(to bottom, transparent, white 30%, white 70%, transparent)",
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, transparent, white 30%, white 70%, transparent)",
-                }}
-                initial={{ x: "-100%" }}
-                animate={{ x: "100%" }}
-                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-              />
+
+              <RightOutlined className="ml-2 w-4" />
             </span>
           </motion.button>
         </span>
+
         <div className="flex flex-col gap-[18px] md:gap-[24px]">
           <h1
             className={`${
@@ -96,8 +106,8 @@ const Hero = () => {
             screeners, and AI explanations to power your decisions.
           </p>
         </div>
-        <span className="hero_joinBeta_btn_white_bg">
-          <button className="">
+        <span className="hero_joinBeta_btn_white_bg rounded-full hover:ring-4 ring-[#ffffff26] transition-all duration-300">
+          <button className="ring-4 ring-[#ffffff26]">
             <span className="text-[8px]  rounded-full font-semibold shadow-lg">
               ◼
             </span>{" "}
@@ -105,10 +115,12 @@ const Hero = () => {
           </button>
         </span>
       </div>
-    
+
       <div className="trading_trusted_partner relative">
         <img
-          className={`relative -translate-y-32 top-0 left-0 right-0 w-full ${width > 810 ? 'md:h-full' : 'h-[300px] '} z-0`}
+          className={`relative -translate-y-32 top-0 left-0 right-0 w-full ${
+            width > 810 ? "md:h-full" : "h-[300px] "
+          } z-0`}
           src="https://framerusercontent.com/images/Cc2PWtVxiDrzLtySBWUTfls6ma4.svg"
           alt="backround imag"
         />
@@ -164,7 +176,6 @@ const Hero = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

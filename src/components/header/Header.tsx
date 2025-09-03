@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useWindowDimensions from "../../hooks/hook";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import navbarlogo from "../../images/navbar-logo.png";
 
 const Header = () => {
@@ -31,57 +31,7 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const menuVariants = {
-    closed: {
-      height: 0,
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-    open: {
-      height: "auto",
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const overlayVariants = {
-    closed: {
-      opacity: 0,
-      transition: {
-        duration: 0.2,
-      },
-    },
-    open: {
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-      },
-    },
-  };
-
-  const navItemVariants = {
-    closed: {
-      opacity: 0,
-      y: -10,
-      transition: {
-        duration: 0.2,
-      },
-    },
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
+ 
   const navLinks = [
     { text: "Platform", link: "#" },
     { text: "How it works", link: "#" },
@@ -94,9 +44,9 @@ const Header = () => {
   return (
     <div className="header_wrapper">
       <div
-        className={`header_inner_content xl:max-w-[1080] lg:max-w-[1070px] ${
-          width >= 810 ? "mx-6" : "auto"
-        } xl:mx-auto w-full`}
+        className={`header_inner_content xl:max-w-[1080] lg:max-w-[1070px] 
+        
+         px-6 xl:px-0 lg:mx-auto w-full`}
       >
         {width <= 810 && (
           <>
@@ -163,8 +113,12 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobile && isOpen && (
-          <>
-            <motion.div className="fixed top-14 left-0 h-full w-full bg-black z-50 pl-6 pt-9">
+          <motion.div initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "100vh", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}>
+            <motion.div className="fixed top-14 left-0 h-auto w-full  bg-black z-50 pl-6 pt-9 pr-3 transition-all duration-500 ease-in-out"
+            transition={{ duration: 0.7, ease: "easeInOut" }}>
               <nav className="navbar_links flex flex-col">
                 {navLinks.map((item, index) => (
                   <Link
@@ -178,7 +132,7 @@ const Header = () => {
                 ))}
               </nav>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
