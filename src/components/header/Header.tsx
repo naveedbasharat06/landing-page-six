@@ -50,7 +50,7 @@ const Header = () => {
       >
         {width <= 810 && (
           <>
-            <div className="flex flex-row justify-start ml-[24px] gap-[12px] items-center max-w-[200px]">
+            <div className="flex flex-row justify-start ml-[2px] gap-[12px] items-center max-w-[200px]">
               <img
                 className="absolute w-6 h-6  top-0 left-0"
                 src={navbarlogo}
@@ -94,7 +94,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           {!isMobile && (
-            <div className="flex flex-row justify-center items-center gap-2">
+            <div className="flex flex-row justify-center items-center gap-[8.2px]">
               {navLinks.map((item, index) => (
                 <span key={index} className="navbar_links font-manrope">
                   <Link className="navlink" to={item.link}>

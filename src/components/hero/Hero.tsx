@@ -58,14 +58,12 @@ const Hero = () => {
     <div className="hero_section_main">
       <div className="textContent_section">
         <span className="hero_joinBeta_btn">
-          <motion.button className="relative h-[33.5px] border border-white/30 font-medium text-[14.4px] rounded-full overflow-hidden px-[21.8px]">
+          <motion.button className="relative h-[33.8px] border border-white/30 font-medium text-[14px] rounded-full overflow-hidden whitespace-nowrap ">
             <span className="relative inline-flex items-center z-10">
-              {/* Text wrapper with overflow hidden */}
               <span className="relative inline-block overflow-hidden rounded-full">
-                <span className="relative z-10">get early access</span>
-
+                <span style={{}} className="relative z-10 ml-1 leading-[20px] font-manrope">get early access</span>
                 <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
                   style={{
                     WebkitMaskImage: `
       linear-gradient(to right, transparent 0%, white 30%, white 40%, transparent 100%),
@@ -88,7 +86,7 @@ const Hero = () => {
                 />
               </span>
 
-              <RightOutlined className="ml-2 w-4" />
+              <RightOutlined className="ml-[6px] w-4" />
             </span>
           </motion.button>
         </span>
@@ -97,19 +95,19 @@ const Hero = () => {
           <h1
             className={`${
               width >= 810 ? "text-[56px]" : "text-[38px]"
-            }  text-white text-center  font-manrope font-normal leading-[56px] md:leading-[64px]`}
+            }  text-white text-center  font-manrope font-normal leading-[56px] md:leading-[64px] tracking-[-2.7px] block not-italic`}
           >
             Trade smarter. Move faster. Stay ahead
           </h1>
-          <p className="text-[17px] text-center font-manrope md:text-lg text-[#adadad] mx-auto leading-[26px] ">
+          <p style={{lineHeight: '26px'}} className="text-[18px] text-center font-manrope md:text-lg text-[#adadad] mx-auto leading-[26px] tracking-[-0.39px] not-italic">
             Built for traders who want more: live market intelligence, advanced
             screeners, and AI explanations to power your decisions.
           </p>
         </div>
         <span className="hero_joinBeta_btn_white_bg rounded-full hover:ring-4 ring-[#ffffff26] transition-all duration-300">
-          <button className="ring-4 ring-[#ffffff26]">
-            <span className="text-[8px]  rounded-full font-semibold shadow-lg">
-              ◼
+          <button className="hover:ring-4 ring-[#ffffff26]">
+            <span style={{ textShadow: "2px 4px 3px rgba(0,0,0,0.23)" }} className="text-[23px] rounded-full pb-[2px] font-semibold text-shadow-lg text-[#000!]">
+              ▪ 
             </span>{" "}
             <span>Join Beta </span>{" "}
           </button>
@@ -118,7 +116,7 @@ const Hero = () => {
 
       <div className="trading_trusted_partner relative">
         <img
-          className={`relative -translate-y-32 top-0 left-0 right-0 w-full ${
+          className={`relative -translate-y-[185px] top-0 left-0 right-0 w-full ${
             width > 810 ? "md:h-full" : "h-[300px] "
           } z-0`}
           src="https://framerusercontent.com/images/Cc2PWtVxiDrzLtySBWUTfls6ma4.svg"

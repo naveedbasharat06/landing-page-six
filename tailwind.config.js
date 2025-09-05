@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         monospace: ["Monospace", "monospace"],
-        sansserif: ["SansSerif", "sans-serif"],
+        sansserif: ["SansSerif"],
          manrope: ['Manrope', 'sans-serif']
       },
       

@@ -14,11 +14,15 @@
 }
 
 .navbar_links .navlink {
-  font-size: 13.8px;
-  line-height: 20px;
-  padding: 0px 15px;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px 16px;
+  letter-spacing: -0.38px;
   font-weight: 500;
   font-style: normal;
+  text-align: center;
+  overflow: hidden;
+  flex-wrap: nowrap;
   color: #adadad;
   transition: all 0.4s ease-in-out;
 }
@@ -28,35 +32,48 @@
 }
 
 .joinBeta_btn button {
-  color: #ffffff;
-  width: 109px;
+  color: #D6D7D6;
+  width: 109.44px;
+  border-style: solid;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 80px;
-  opacity: 0.85;
-  font-weight: 500 !important;
+  font-family: 'Manrope';
+  font-weight: 600;
   transition: all 0.4s ease-in-out;
-  font-size: 14.4px;
+  font-size: 13.4px;
 }
 
 .joinBeta_btn button:hover {
   color: #ffffff;
-  
+   border: 1px solid rgba(255, 255, 255, 0.6);
+     color: #D6D7D6;
   opacity: 1;
 }
 .hero_joinBeta_btn_white_bg button {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(235, 235, 235);
   color: #000;
   height: 40px;
+  width: 121.9px;
   display: flex;
-  justify-content: center;
-  gap: 5px;
   align-items: center;
-  padding: 0px 18px;
-  font-weight: 500 !important;
-  border-radius: 800px;
+  line-height: 20px;
+  justify-content: center;
+  font-style: normal;
+  gap: 7px;
+  font-size: 14.5px;
+  white-space: nowrap;
+  font-family: 'Manrope';
+  align-items: center;
+  padding: 0px 19px;
+  font-weight: 600 !important;
+  border-radius: 700px;
   opacity: 1;
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+    --border-style: solid;
+    border-radius: 800px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
+  
+
 }
 .mobile-menu-button {
   cursor: pointer;
@@ -116,18 +133,23 @@
 .hero_joinBeta_btn button {
    color: #adadad;
   padding: 0px 15.5px;
+  width: 160.63px;
   opacity: 0.6;
-  height: 33.8px;
+  height: 35.8px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   opacity: 0.85;
   font-weight: 500 !important;
   transition: all 0.4s ease-in-out;
-  font-size: 14.4px;
+  font-size: 14px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   z-index: 10;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+
 }
 .hero_joinBeta_btn button:hover {
  
@@ -150,7 +172,7 @@
     top: 10%;
     left: 0%;
     right: 0%;
-    margin-top: -22%;
+    margin-top: -23%;
 }
 
 .tradingIndex_trusted_partner{
@@ -160,7 +182,7 @@
   align-items: center;
   overflow: hidden;
   display: flex;
-  padding: 40px 0px;
+  padding: 80px 0px;
   gap: 24px;
 }
 .trusted_partner_text {
@@ -280,8 +302,8 @@
 
 }
 .flatform_inner_content{
-  border-radius: 16px;
-  padding: 20px 20px 0px 20px;
+  border-radius: 16px 16px 0 0;
+  padding: 32px 20px 0px 20px;
   border: 1px solid rgb(54, 50, 50);
   position: relative;
   width: 442px;
@@ -347,11 +369,11 @@
 
 /* right side inner content */
 .flatform_RightSide_inner_content{
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0 ;
   padding: 20px 20px 0px 20px;
   border: 1px solid rgb(54, 50, 50);
   position: relative;
-  width: 442px;
+  width: 348px;
   transition: all 0.4s ease-in-out;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: inset 0 4px 10px rgba(255, 200, 0, 0.12);
@@ -364,7 +386,7 @@
   top: 0;
   left: 30%;
   width: 40%;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
@@ -419,6 +441,7 @@
 .textContent_section h1 {
     font-style: normal;
     max-width: 640px;
+    
 }
 /****** trusted partner ******  */
 .trading_trusted_partner{
@@ -488,7 +511,7 @@
     opacity: 0.85;
     font-weight: 500;
     transition: all 0.4s ease-in-out;
-    font-size: 14.4px;
+    font-size: 15.7px;
   }
 
   .joinBeta_btn button:hover {
@@ -613,8 +636,7 @@
   border: 1px solid #332c2c;
 }
 .flatform_inner_content{
-  border-radius: 16px;
-  padding: 24px 24px 0px 24px;
+  padding: 32px 24px 0px 24px;
   width: 100%;
   margin: auto;
   position: relative;
@@ -624,9 +646,9 @@
   overflow: hidden;
 }
 .flatform_RightSide_inner_content{
-  border-radius: 16px;
   padding: 24px 24px 0px 24px;
-  width: 100%;
+  width: 80vw;
+  /* max-width: 600px; */
   margin: auto;
   position: relative;
   transition: all 0.4s ease-in-out;

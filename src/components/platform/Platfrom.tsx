@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import useWindowDimensions from "../../hooks/hook";
 import { Typewriter } from "react-simple-typewriter";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircleOutlined } from "@ant-design/icons";
+import { CheckCircleOutlined, SendOutlined } from "@ant-design/icons";
 
 const Platfrom = () => {
   const { width, height } = useWindowDimensions();
   const [askQuestion, setAskQuestion] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  const text =
+    width >= 810
+      ? "Factors moving the market now"
+      : "Experience the magic of AI";
+
   return (
     <div className="platform_wrapper">
       <div className="platform_header_content">
-        <button className="max-w-[90px] blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] border-[0.1px] font-medium text-[#adadad] rounded-full border-[#8f8e8d] px-[18.4px] py-[7px] text-sm">
+        <button className="max-w-[90px] blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] border-[0.1px] font-medium text-[#adadad] rounded-full border-[#8f8e8d] px-[18.4px] py-[6px] text-sm">
           <div className="absolute inset-0  flex-none"></div>
           Platform
         </button>
@@ -19,7 +26,7 @@ const Platfrom = () => {
             className={`text-center ${
               width >= 810
                 ? "md:text-[40px] leading-[48px]"
-                : "text-[28px] tracking-[-0.56px] leading-[44px] "
+                : "text-[28px] tracking-[-1.8px] leading-[48px]"
             }  font-manrope font-normal`}
           >
             Your edge in the market starts here
@@ -47,7 +54,7 @@ const Platfrom = () => {
             </div>
             <div>
               <div className="relative  w-10 mx-auto">
-                <button className="z-20 blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] shadow-lg  rounded-lg p-3">
+                <button className="z-20 blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] shadow-lg  rounded-lg p-[9px]">
                   <span className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[1px] w-[60%] bg-gradient-to-r from-transparent via-white to-transparent" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,47 +70,49 @@ const Platfrom = () => {
                     </g>
                   </svg>
                 </button>
-                <div className="h-11 w-[1px] z-10 rounded-full mx-auto bg-gradient-to-b from-gray-800 via-orange-500 to-slate-200"></div>
+                <div className="h-11 w-[1.2px] z-10 rounded-full mx-auto bg-gradient-to-b from-gray-800 via-orange-500 to-slate-200"></div>
               </div>
-              <div className="flatform_inner_content relative overflow-hidden transition-all duration-500">
-                <h4 className="font-manrope text-sm font-medium pb-5">
-                  {width <= 810 && <div> ✨ </div>}
-                  {width > 810 && <span> ✨ </span>} Why did $NVDA drop this
-                  week?
-                </h4>
-                <p className="text-[#adadad] text-sm max-w-full md:max-w-[400px] h-[115px] md:h-16">
-                  {width > 810 ? (
-                    <Typewriter
-                      words={[
-                        `SNVDA saw a decline after earnings guidance missed analyst expectations Sector rotation also moved capital out of tech into value stocks`,
-                      ]}
-                      loop={true}
-                      typeSpeed={30}
-                      deleteSpeed={0}
-                      delaySpeed={3000}
-                      cursor
-                      cursorStyle=" "
-                    />
-                  ) : (
-                    "SNVDA saw a decline after earnings guidance missed analyst expectations Sector rotation also moved capital out of tech into value stocks"
+              <div>
+                <div className="flatform_inner_content relative overflow-hidden transition-all duration-500">
+                  <h4 className="font-manrope text-sm font-medium pb-6">
+                    {width <= 810 && <div> ✨ </div>}
+                    {width > 810 && <span> ✨ </span>} Why did $NVDA drop this
+                    week?
+                  </h4>
+                  <p className="text-[#adadad] text-sm max-w-full md:max-w-[400px] h-[115px] md:h-16">
+                    {width > 810 ? (
+                      <Typewriter
+                        words={[
+                          `SNVDA saw a decline after earnings guidance missed analyst expectations Sector rotation also moved capital out of tech into value stocks`,
+                        ]}
+                        loop={true}
+                        typeSpeed={30}
+                        deleteSpeed={0}
+                        delaySpeed={3000}
+                        cursor
+                        cursorStyle=" "
+                      />
+                    ) : (
+                      "SNVDA saw a decline after earnings guidance missed analyst expectations Sector rotation also moved capital out of tech into value stocks"
+                    )}
+                  </p>
+                  {width >= 810 && (
+                    <div className="inline-flex gap-3 justify-start py-4">
+                      <button className="text-[#adadad] font-sansserif transition-all duration-500 hover:ring-4 ring-[#ffffff26] leading-normal font-semibold opacity-80 blur-[0.3px] mx-auto border-[0.1px] rounded-full border-[#363232] px-[22px] py-[6px] text-sm ">
+                        <div className="absolute inset-0  flex-none"></div>
+                        Refine this
+                      </button>
+                      <button className="text-[#adadad] font-sansserif transition-all duration-500 hover:ring-4 ring-[#ffffff26] leading-normal  blur-[0.3px] opacity-80 font-semibold mx-auto border-[0.1px] rounded-full border-[#363232] px-[22px] py-[6px] text-sm">
+                        <div className="absolute inset-0  flex-none"></div>
+                        Suggest other tickers
+                      </button>
+                    </div>
                   )}
-                </p>
-                {width >= 810 && (
-                  <div className="inline-flex gap-3 justify-start py-4">
-                    <button className="text-[#adadad] font-semibold opacity-80 blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] border-[0.1px] rounded-full border-[#8f8e8d] px-[22px] py-[7px] text-xs">
-                      <div className="absolute inset-0  flex-none"></div>
-                      Refine this
-                    </button>
-                    <button className="text-[#adadad] blur-[0.3px] opacity-80 font-semibold mx-auto ring-4 ring-[#ffffff26] border-[0.1px] rounded-full border-[#8f8e8d] px-[22px] py-[7px] text-xs">
-                      <div className="absolute inset-0  flex-none"></div>
-                      Suggest other tickers
-                    </button>
-                  </div>
-                )}
+                </div>
                 <div
-                  className={`relative bottom-0 ${
+                  className={` relative bottom-0 ${
                     askQuestion ? "opacity-100" : "opacity-85"
-                  }  h-14 border-t border-gray-500 text-sm font-medium font-manrope flex justify-between items-center overflow-hidden`}
+                  }  h-16 border border-[#363232;] border-t-0 rounded-b-[16px] text-sm font-medium font-manrope flex justify-between items-center overflow-hidden px-5`}
                   onMouseEnter={() => setAskQuestion(true)}
                   onMouseLeave={() => setAskQuestion(false)}
                 >
@@ -111,8 +120,8 @@ const Platfrom = () => {
                     {askQuestion ? (
                       <motion.div
                         key="hoverText"
-                        initial={{ y: 30, opacity: 0 }} 
-                        animate={{ y: 0, opacity: 1 }} 
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 30, opacity: 0 }}
                         transition={{ duration: 0.35, ease: "easeInOut" }}
                         className="absolute"
@@ -122,9 +131,9 @@ const Platfrom = () => {
                     ) : (
                       <motion.div
                         key="defaultText"
-                        initial={{ y: -30, opacity: 0 }} 
-                        animate={{ y: 0, opacity: 1 }} 
-                        exit={{ y: -30, opacity: 0 }} 
+                        initial={{ y: -30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -30, opacity: 0 }}
                         transition={{ duration: 0.35, ease: "easeInOut" }}
                         className="absolute text-[#adadad]"
                       >
@@ -135,9 +144,9 @@ const Platfrom = () => {
                   <button
                     className={`text-white  ${
                       askQuestion ? "opacity-100" : "opacity-85"
-                    } transition-all duration-300 text-2xl absolute right-0 cursor-pointer`}
+                    } transition-all duration-300 absolute right-5 cursor-pointer`}
                   >
-                    ➤
+                    <SendOutlined style={{ fontSize: 20 }} />
                   </button>
                 </div>
               </div>
@@ -155,7 +164,7 @@ const Platfrom = () => {
             </div>
             <div>
               <div className="relative w-10 mx-auto">
-                <button className="z-20 blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] shadow-lg  rounded-lg p-3">
+                <button className="z-20 blur-[0.3px]  mx-auto ring-4 ring-[#ffffff26] shadow-lg  rounded-lg p-[9px]">
                   <span className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[1px] w-[60%] bg-gradient-to-r from-transparent via-white to-transparent" />
 
                   <svg
@@ -169,42 +178,75 @@ const Platfrom = () => {
                     <path d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z" />
                   </svg>
                 </button>
-                <div className="h-11 w-[1px] z-10 rounded-full mx-auto bg-gradient-to-b from-gray-800 via-green-500 to-slate-200"></div>
+                <div className="h-11 w-[1.3px] z-10 rounded-full mx-auto bg-gradient-to-b from-gray-800 via-green-500 to-slate-200"></div>
               </div>
-              <button className="border border-[#343231] mb-8 rounded-full px-9 py-2 text-[15px] font-manrope font-semibold leading-6">
-                {width >= 810
-                  ? "Factors moving the market now"
-                  : "Experience the  magic  of AI"}
-              </button>
-              <div className="flatform_RightSide_inner_content relative overflow-hidden transition-all duration-500">
-                <h4 className="font-manrope text-sm font-medium pb-4">
-                  <CheckCircleOutlined
-                    style={{ color: "#0B7812", marginRight: "8px", width: 18 }}
+              <button
+                className="relative border border-[#343231] mb-8 rounded-full px-9 py-2 text-[15px] font-manrope font-semibold leading-6 overflow-hidden cursor-pointer"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+              >
+                <span className="relative inline-block">
+                  {/* Text with highlight behind */}
+                  <span className="relative z-10">{text}</span>
+
+                  {/* Expanding highlight */}
+                  <motion.span
+                    className="absolute top-0 bottom-0 bg-green-200/40 z-0"
+                    initial={{ width: "0%", left: "15%", opacity: 0 }}
+                    animate={
+                      hovered
+                        ? { width: "70%", opacity: 1 }
+                        : { width: "0%", opacity: 0 }
+                    }
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    style={{ borderRadius: "2px" }}
                   />
-                  Key factors
-                </h4>
-                <div>
-                  <h4 className="pb-2 text-sm text-[#d6d7d6]">
-                    $SPY breakout — key drivers
+
+                  {/* Moving cursor (caret) */}
+                  <motion.span
+                    className="absolute top-0 bottom-0 w-[2px] bg-white z-20"
+                    initial={{ x: "0%", left: "15%" }}
+                    animate={hovered ? { x: "70%" } : { x: "0%" }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                  />
+                </span>
+              </button>
+              <div>
+                <div className="flatform_RightSide_inner_content relative overflow-hidden transition-all duration-500">
+                  <h4 className="font-manrope text-sm font-medium pb-4">
+                    <CheckCircleOutlined
+                      style={{
+                        color: "#0B7812",
+                        marginRight: "8px",
+                        width: 18,
+                      }}
+                    />
+                    Key factors
                   </h4>
-                  <ul className="list-disc list-inside">
-                    <li className="text-sm text-[#8f8e8d] marker:text-white font-manrope">
-                      Fed rate decision
-                    </li>
-                    <li className="text-sm py-1 text-[#8f8e8d] marker:text-white font-manrope">
-                      $AAPL earnings surprise
-                    </li>
-                    <li className="text-sm text-[#8f8e8d] marker:text-white font-manrope">
-                      Inflation data release
-                    </li>
-                  </ul>
-                  <div className="w-full border-t border-gray-600 h-auto my-3" />
-                  <div className=" inline-flex gap-3 justify-start py-2">
-                    <button className="whitespace-nowrap text-[#adadad] font-semibold opacity-80 blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] border-[0.1px] rounded-full border-[#8f8e8d] px-[22px] py-[7px] text-xs">
+                  <div className="pb-5">
+                    <h4 className="pb-2 text-sm text-[#d6d7d6]">
+                      $SPY breakout — key drivers
+                    </h4>
+                    <ul className="list-disc list-inside">
+                      <li className="text-sm text-[#8f8e8d] marker:text-white font-manrope">
+                        Fed rate decision
+                      </li>
+                      <li className="text-sm py-1 text-[#8f8e8d] marker:text-white font-manrope">
+                        $AAPL earnings surprise
+                      </li>
+                      <li className="text-sm text-[#8f8e8d] marker:text-white font-manrope">
+                        Inflation data release
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="h-16 border border-[#363232;] border-t-0 rounded-b-[16px] w-full">
+                  <div className="flex gap-3 py-3 px-4 justify-start">
+                    <button className="whitespace-nowrap font-sansserif text-[#adadad] transition-all duration-500 hover:ring-4 ring-[#ffffff26] leading-normal font-semibold opacity-80 blur-[0.3px] border-[0.1px] rounded-full border-[#363232] px-[22px] py-[6px] text-sm">
                       <div className="absolute inset-0  flex-none"></div>
                       Top factors
                     </button>
-                    <button className=" whitespace-nowrap text-[#adadad] blur-[0.3px] opacity-80 font-semibold mx-auto ring-4 ring-[#ffffff26] border-[0.1px] rounded-full border-[#8f8e8d] px-[22px] py-[7px] text-xs">
+                    <button className=" whitespace-nowrap font-sansserif text-[#adadad] transition-all duration-500 hover:ring-4 ring-[#ffffff26] leading-normal blur-[0.3px] opacity-80 font-semibold border-[0.1px] rounded-full border-[#363232] px-[22px] py-[6px] text-sm">
                       <div className="absolute inset-0  flex-none"></div>
                       Latest events
                     </button>
@@ -213,6 +255,10 @@ const Platfrom = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* trading performance */}
+        <div className="trading_performance">
+          <div></div>
         </div>
       </div>
     </div>
