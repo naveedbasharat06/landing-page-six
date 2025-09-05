@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { RightOutlined } from "@ant-design/icons";
 import useWindowDimensions from "../../hooks/hook";
-import tradingIndexBG from "../../images/tradingIndex_backgroundImg.avif";
+import tradingIndexBG from "../../images/tradingIndex_backgroundImg.png";
 import Marquee from "react-fast-marquee";
 import colombia_uni from "../../images/colombia_uni.avif";
 import corolal_uni from "../../images/corolal_uni.avif";
@@ -116,7 +116,7 @@ const Hero = () => {
 
       <div className="trading_trusted_partner relative">
         <img
-          className={`relative -translate-y-[185px] top-0 left-0 right-0 w-full ${
+          className={`relative -translate-y-[185px] top-0 left-0 right-0 w-full object-contain ${
             width > 810 ? "md:h-full" : "h-[300px] "
           } z-0`}
           src="https://framerusercontent.com/images/Cc2PWtVxiDrzLtySBWUTfls6ma4.svg"
@@ -165,7 +165,9 @@ const Hero = () => {
                         alt={item.name}
                         className="max-h-[65px] w-auto object-contain rounded-md cursor-pointer"
                       />
+                    
                     </div>
+                    
                   ))}
                 </Marquee>
               </div>
