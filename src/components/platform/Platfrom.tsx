@@ -45,7 +45,7 @@ const Platfrom = () => {
         <div className="platform_cards">
           <div className="platform_left_card z-10">
             <div
-              className="absolute bottom-0 left-0 right-0 h-[70%] "
+              className="absolute bottom-0 left-0 right-0 h-[70%]"
               style={{
                 backgroundImage: `url(${require("../../images/dotteddarkBg.jpg")})`,
                 backgroundSize: "cover",
@@ -53,7 +53,6 @@ const Platfrom = () => {
                 backgroundPosition: "bottom",
               }}
             />
-
             <div className="platform_card_content">
               <h2 className="text-base md:text-lg font-manrope leading-[28px] tracking-[-0.4px] font-medium opacity-95">
                 AI that explains the market — in real time
@@ -123,7 +122,7 @@ const Platfrom = () => {
                 <div
                   className={` relative bottom-0 ${
                     askQuestion ? "opacity-100" : "opacity-85"
-                  }  h-16 border border-[#363232;] border-t-0 rounded-b-[16px]  text-sm font-medium font-manrope flex justify-between items-center overflow-hidden px-5`}
+                  }  h-16 border border-[#363232;] border-t-0 rounded-b-[16px] bg-[#000]  text-sm font-medium font-manrope flex justify-between items-center overflow-hidden px-5`}
                   onMouseEnter={() => setAskQuestion(true)}
                   onMouseLeave={() => setAskQuestion(false)}
                 >
@@ -135,7 +134,7 @@ const Platfrom = () => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 30, opacity: 0 }}
                         transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="absolute"
+                        className="absolute font-semibold"
                       >
                         Ask why, what, or how...
                       </motion.div>
@@ -146,7 +145,7 @@ const Platfrom = () => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -30, opacity: 0 }}
                         transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="absolute text-[#adadad]"
+                        className="absolute text-[#adadad] font-semibold"
                       >
                         Ask Mochi Intelligence...
                       </motion.div>
@@ -260,7 +259,7 @@ const Platfrom = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="h-16 border border-[#363232;] border-t-0 rounded-b-[16px] w-full z-20 relative">
+                <div className="h-16 border border-[#363232] bg-[#000]  border-t-0 rounded-b-[16px] w-full z-20 relative">
                   <div className="flex gap-3 py-3 px-4 justify-start">
                     <button className="whitespace-nowrap font-manrope text-[#adadad] shadow-[inset_0px_0px_10px_1px_rgba(237,238,233,0.3)] transition-all duration-500 hover:ring-4 ring-[#ffffff26] leading-normal font-semibold opacity-80 blur-[0.3px] border-[0.1px] rounded-full border-[#363232] px-[22px] py-[6px] text-sm">
                       <div className="absolute inset-0  flex-none"></div>
@@ -481,12 +480,11 @@ const Platfrom = () => {
                   </p>
                 </div>
                 <button
-                  className={`relative overflow-hidden bg-[#171615] text-[13px] rounded-full w-full py-2 transition-all duration-500 flex items-center justify-center ${
-                    hovered ? "bg-[#1C0F2E] text-[#8B49E3]" : "text-gray-200"
+                  className={`relative overflow-hidden bg-[#171615] text-[13px] font-manrope font-semibold rounded-full w-full py-2 transition-all duration-500 flex items-center justify-center ${
+                    hovered ? "bg-[#1C0F2E] text-[#c08cff]" : "text-[#d6d7d6]"
                   }`}
                 >
                   <span className="absolute left-[32%]">✨</span>
-
                   <span className="relative h-[20px] flex items-center justify-center">
                     <span
                       className={`absolute transition-all duration-500 transform ${
