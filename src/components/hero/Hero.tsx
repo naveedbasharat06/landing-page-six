@@ -63,7 +63,7 @@ const Hero = () => {
               <span className="relative inline-block overflow-hidden rounded-full">
                 <span style={{}} className="relative z-10 ml-1 leading-[20px] font-manrope">get early access</span>
                 <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                   style={{
                     WebkitMaskImage: `
       linear-gradient(to right, transparent 0%, white 30%, white 40%, transparent 100%),
@@ -86,7 +86,7 @@ const Hero = () => {
                 />
               </span>
 
-              <RightOutlined className="ml-[6px] w-4" />
+              <RightOutlined className="ml-[8px] w-[15px] opacity-75" />
             </span>
           </motion.button>
         </span>
@@ -106,7 +106,7 @@ const Hero = () => {
         </div>
         <span className="hero_joinBeta_btn_white_bg rounded-full hover:ring-4 ring-[#ffffff26] transition-all duration-300">
           <button className="hover:ring-4 ring-[#ffffff26]">
-            <span style={{ textShadow: "2px 4px 3px rgba(0,0,0,0.23)" }} className="text-[23px] rounded-full pb-[2px] font-semibold text-shadow-lg text-[#000!]">
+            <span style={{ textShadow: "1px 4px 3px rgba(0,0,0,0.18)" }} className="text-[23px] rounded-full pb-[2px] font-semibold text-shadow-lg text-[#000!]">
               ▪ 
             </span>{" "}
             <span>Join Beta </span>{" "}
@@ -115,13 +115,15 @@ const Hero = () => {
       </div>
 
       <div className="trading_trusted_partner relative">
+ 
         <img
-          className={`relative -translate-y-[185px] top-0 left-0 right-0 w-full object-contain ${
-            width > 810 ? "md:h-full" : "h-[300px] "
+          className={`relative -translate-y-[193px] top-0 left-0 right-0 w-full object-contain ${
+            width > 810 ? "md:h-full" : "h-[300px]"
           } z-0`}
           src="https://framerusercontent.com/images/Cc2PWtVxiDrzLtySBWUTfls6ma4.svg"
-          alt="backround imag"
+          alt="backround decorate imag"
         />
+            
         <div className="trusted_partner_list">
           <img
             className="trading_indexBgImg"
@@ -139,7 +141,7 @@ const Hero = () => {
 
             <div>
               <div
-                className="relative max-w-[800px] mx-auto overflow-hidden"
+                className="relative max-w-[800px] py-[6px] mx-auto overflow-hidden"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >

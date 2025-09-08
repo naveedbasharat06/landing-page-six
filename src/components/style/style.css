@@ -36,7 +36,7 @@
   width: 109.44px;
   border-style: solid;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);;
   border-radius: 80px;
   font-family: 'Manrope';
   font-weight: 600;
@@ -126,6 +126,7 @@
 .textContent_section h1 {
     font-style: normal;
     max-width: 880px;
+         transform: scaleY(0.96);
 }
 .textContent_section p {
     max-width: 588px;
@@ -133,13 +134,12 @@
 
 .hero_joinBeta_btn button {
    color: #adadad;
-  padding: 0px 15.5px;
-  width: 160.63px;
-  opacity: 0.6;
+padding: 2px 0px 0px 4px;
+  width: 160.67px;
   height: 35.8px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  opacity: 0.85;
-  font-weight: 500 !important;
+  border: 1px solid rgba(55, 58, 58,0.78);
+  opacity: 1;
+  font-weight: 500;
   transition: all 0.4s ease-in-out;
   font-size: 14px;
   position: relative;
@@ -149,7 +149,7 @@
   text-align: center;
   z-index: 10;
   line-height: 20px;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.35px;
 
 }
 .hero_joinBeta_btn button:hover {
@@ -172,7 +172,7 @@
     top: 10%;
     left: 0%;
     right: 0%;
-    margin-top: -22%;
+    margin-top: -22.45%;
 }
 
 .tradingIndex_trusted_partner{
@@ -182,7 +182,7 @@
   align-items: center;
   overflow: hidden;
   display: flex;
-  padding: 80px 0px;
+  padding: 22px 0px 80px;
   gap: 24px;
 }
 .trusted_partner_text {
@@ -191,6 +191,7 @@
   font-weight: 500;
   font-style: normal;
   font-size: 15px;
+  letter-spacing: -0.4px;
 }
 /* ************ platform *************** */
 .platform_wrapper{
@@ -209,7 +210,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    color: white;
+    
     overflow: visible;
     margin: auto;
     position: relative;
@@ -299,7 +300,6 @@
   justify-content: center;
   text-align: center;
   gap: 6px;
-
 }
 .flatform_inner_content{
   border-radius: 16px 16px 0 0;
@@ -457,7 +457,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  gap: 30px;
+  gap: 48px;
   padding: 56px 40px 40px;
   border-radius: 16px;
   color: aliceblue;
@@ -586,7 +586,6 @@
   color: aliceblue;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border: 1px solid #332c2c;
-
 }
 .connected_brokerage::before {
   content: "";
@@ -603,10 +602,78 @@
     rgba(255, 255, 255, 0) 100%
   );
 }
+/* connection brokarage */
+
+.connection_brokerage_button button{
+  border-radius: 30px ;
+  position: relative;
+  background-color: #000;
+  z-index: 3;
+  transition: all 0.4s ease-in-out;
+  border-top: 1px solid rgba(80, 96, 243, 0.15);
+  box-shadow: inset 0 4px 10px rgba(39, 80, 214, 0.12);
+  overflow: hidden;
+}
+
+.connection_brokerage_button button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30%;
+  z-index: 10;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(59, 107, 238, 0.9),
+    rgba(51, 103, 245, 0.9),
+    transparent
+  );
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+
+.connection_brokerage_button button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 50%;
+  height: 12px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(46, 116, 245, 0.3),
+    rgba(64, 119, 240, 0.3),
+    transparent
+  );
+  filter: blur(6px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+/* hover state */
+.connection_brokerage_button button:hover::before {
+  width: 70%;
+  left: 15%;
+  opacity: 1;
+}
+
+.connection_brokerage_button button:hover::after {
+  width: 70%;
+  left: 15%;
+  opacity: 1;
+}
+
+.connection_brokerage_button button:hover {
+  box-shadow: inset 0 2px 6px rgba(197, 60, 197, 0.08);
+}
+
 
 @media (max-width: 1200px) {
   .trading_performance_record{
-  max-width: 90%;
+  max-width: 95%;
   margin: auto;
   display: grid;
   gap: 24px;
@@ -636,6 +703,7 @@
 }
 .trusted_partner_list{
      position: relative;
+     z-index: 20;
     top: 0%;
     left: 0%;
     right: 0%;
@@ -650,6 +718,22 @@
   align-items: center;
   justify-content: center;
   position: relative;
+}
+.flatform_trading_summary_inner_content{
+  padding: 24px;
+  width: 422px;
+  height: 130px;
+}
+.connected_brokerage{
+   width: 100%;
+  max-width: 100%;
+  height: 570px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  padding:  54px 40px 40px;
 }
 }
 /* Media query for mobile devices */
@@ -855,5 +939,53 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border: 1px solid #332c2c;
 }
+.connected_brokerage{
+   width: 100%;
+  max-width: 95%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding:  32px 24px;
+  margin: auto;
+}
 
+.trading_summary{
+   width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
+  gap: 24px;
+  padding: 32px 24px;
+}
+.flatform_trading_summary_inner_content{
+  padding: 24px;
+  width: 100%;
+  height: 130px;
+  margin: auto;
+}
+.resheduling_today{
+  border-radius: 16px ;
+  padding: 28px  16px 16px;
+  border: 1px solid rgb(54, 50, 50);
+  position: relative;
+  width: 100%;
+  height: 136px;
+  z-index: 2;
+  transform: translateY(6px);
+  margin: auto;
+
+}
+.platform_card_content{
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 0 24px;
+}
 }
