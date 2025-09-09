@@ -58,12 +58,17 @@ const Hero = () => {
     <div className="hero_section_main">
       <div className="textContent_section">
         <span className="hero_joinBeta_btn">
-          <motion.button className="relative h-[33.8px] border border-white/30 font-medium text-[14px] rounded-full overflow-hidden whitespace-nowrap ">
+          <motion.button className="relative h-[33.8px] border border-white/30 font-medium text-[14px] rounded-full justify-center overflow-hidden whitespace-nowrap">
             <span className="relative inline-flex items-center z-10">
               <span className="relative inline-block overflow-hidden rounded-full">
-                <span style={{}} className="relative z-10 ml-1 leading-[20px] font-manrope">get early access</span>
+                <span
+                  style={{}}
+                  className="relative z-10 ml-1 leading-[20px] tracking-[-0.2px] font-normal font-manrope"
+                >
+                  get early access
+                </span>
                 <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent text-white"
                   style={{
                     WebkitMaskImage: `
       linear-gradient(to right, transparent 0%, white 30%, white 40%, transparent 100%),
@@ -79,14 +84,30 @@ const Hero = () => {
                     maskRepeat: "no-repeat",
                     WebkitMaskSize: "200% 100%",
                     maskSize: "200% 100%",
+                    color: "rgb(245, 253, 243)",
                   }}
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "100%" }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                  initial={{ x: "-100%", color: "rgb(245, 253, 244)" }}
+                  animate={{ x: "100%", color: "rgb(245, 253, 243)" }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                 />
               </span>
 
-              <RightOutlined className="ml-[8px] w-[15px] opacity-75" />
+             
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 256"
+                focusable="false"
+                color="rgb(173, 173, 173)"
+                fill="currentColor"
+                style={{
+                  width: 16,
+                  height: 20,
+                  marginLeft: 7,
+                  paddingBottom: 2,
+                }}
+              >
+                <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+              </svg>
             </span>
           </motion.button>
         </span>
@@ -95,19 +116,25 @@ const Hero = () => {
           <h1
             className={`${
               width >= 810 ? "text-[56px]" : "text-[38px]"
-            }  text-white text-center  font-manrope font-normal leading-[56px] md:leading-[64px] tracking-[-2.7px] block not-italic`}
+            }  text-white text-center font-manrope font-normal leading-[56px] md:leading-[64px] tracking-[-2.6px] block not-italic`}
           >
             Trade smarter. Move faster. Stay ahead
           </h1>
-          <p style={{lineHeight: '26px'}} className="text-[18px] text-center font-manrope md:text-lg text-[#adadad] mx-auto leading-[26px] tracking-[-0.39px] not-italic">
+          <p
+            style={{ lineHeight: "26px" }}
+            className="text-[18px] text-center font-manrope md:text-lg text-[#adadad] mx-auto leading-[26px] tracking-[-0.42px] not-italic"
+          >
             Built for traders who want more: live market intelligence, advanced
             screeners, and AI explanations to power your decisions.
           </p>
         </div>
         <span className="hero_joinBeta_btn_white_bg rounded-full hover:ring-4 ring-[#ffffff26] transition-all duration-300">
           <button className="hover:ring-4 ring-[#ffffff26]">
-            <span style={{ textShadow: "1px 4px 3px rgba(0,0,0,0.18)" }} className="text-[23px] rounded-full pb-[2px] font-semibold text-shadow-lg text-[#000!]">
-              ▪ 
+            <span
+              style={{ textShadow: "1px 4px 3px rgba(0,0,0,0.18)" }}
+              className="text-[23px] rounded-full pb-[2px] font-semibold text-shadow-lg text-[#000!]"
+            >
+              ▪
             </span>{" "}
             <span>Join Beta </span>{" "}
           </button>
@@ -115,15 +142,18 @@ const Hero = () => {
       </div>
 
       <div className="trading_trusted_partner relative">
- 
-        <img
-          className={`relative -translate-y-[193px] top-0 left-0 right-0 w-full object-contain ${
-            width > 810 ? "md:h-full" : "h-[300px]"
-          } z-0`}
-          src="https://framerusercontent.com/images/Cc2PWtVxiDrzLtySBWUTfls6ma4.svg"
-          alt="backround decorate imag"
-        />
-            
+        <div className="relative overflow-hidden -translate-y-[186px] top-0 left-0 right-0">
+        <div className="absolute inset-0 bg-white/5 z-10 pointer-events-none opacity-45"></div>
+          <img
+            id="hero_decorateBG_img"
+            className={` w-full object-contain shadow-inner ${
+              width > 810 ? "md:h-full" : "h-[300px]"
+            } z-0`}
+            src="https://framerusercontent.com/images/Cc2PWtVxiDrzLtySBWUTfls6ma4.svg"
+            alt="backround decorate imag"
+          />
+        </div>
+
         <div className="trusted_partner_list">
           <img
             className="trading_indexBgImg"
@@ -167,9 +197,7 @@ const Hero = () => {
                         alt={item.name}
                         className="max-h-[65px] w-auto object-contain rounded-md cursor-pointer"
                       />
-                    
                     </div>
-                    
                   ))}
                 </Marquee>
               </div>

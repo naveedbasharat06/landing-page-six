@@ -16,14 +16,16 @@
 .navbar_links .navlink {
   font-size: 14px;
   line-height: 26px;
-  padding: 0px 16px;
+  padding: 0px 18px;
   letter-spacing: -0.38px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   flex-wrap: nowrap;
-  color: #adadad;
+  color: rgb(173, 173, 173);
+ 
+
   transition: all 0.4s ease-in-out;
 }
 
@@ -53,7 +55,7 @@
 }
 .hero_joinBeta_btn_white_bg button {
   background-color: rgb(235, 235, 235);
-  color: #000;
+  color: rgb(23, 22, 21);
   height: 40px;
   width: 121.9px;
   display: flex;
@@ -74,7 +76,7 @@
     border-radius: 800px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
     letter-spacing: 0.2px;  
-
+    font-style: normal;
 }
 .mobile-menu-button {
   cursor: pointer;
@@ -160,6 +162,19 @@ padding: 2px 0px 0px 4px;
     position: relative;
     width: 100%;
 }
+#hero_decorateBG_img{ 
+ 
+  background: transparent; 
+}
+  #hero_decorateBG_img::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2); 
+    }
 .trading_indexBgImg{
     box-shadow: rgba(233, 228, 230, 0.2) -10px -7px 50px -9px;
     width: 100%;
@@ -172,7 +187,7 @@ padding: 2px 0px 0px 4px;
     top: 10%;
     left: 0%;
     right: 0%;
-    margin-top: -22.45%;
+    margin-top: -22.38%;
 }
 
 .tradingIndex_trusted_partner{
@@ -182,8 +197,9 @@ padding: 2px 0px 0px 4px;
   align-items: center;
   overflow: hidden;
   display: flex;
-  padding: 22px 0px 80px;
+  padding: 26px 0px 80px;
   gap: 24px;
+
 }
 .trusted_partner_text {
   text-align: center;
@@ -206,11 +222,10 @@ padding: 2px 0px 0px 4px;
     gap: 24px;
     justify-content: center;
     overflow: visible;
-    padding: 80px 0;
+    padding: 75px 0 80px;
     position: relative;
     width: 100%;
     max-width: 1200px;
-    
     overflow: visible;
     margin: auto;
     position: relative;
@@ -235,10 +250,10 @@ padding: 2px 0px 0px 4px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 30px;
+  gap: 48px;
   padding: 64px 54px;
   border-radius: 16px;
   color: #ffffff;
@@ -268,10 +283,10 @@ padding: 2px 0px 0px 4px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 30px;
+  gap: 48px;
   padding: 64px 54px;
   border-radius: 16px;
   color: aliceblue;
@@ -324,8 +339,8 @@ padding: 2px 0px 0px 4px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(255, 165, 0, 0.9),
-    rgba(255, 215, 0, 0.9),
+    rgb(255, 150, 75),
+    rgb(255, 150, 75),
     transparent
   );
   opacity: 0.6;
@@ -338,12 +353,12 @@ padding: 2px 0px 0px 4px;
   top: 0;
   left: 20%;
   width: 50%;
-  height: 12px;
+  height: 22px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(255, 165, 0, 0.3),
-    rgba(255, 215, 0, 0.3),
+    rgba(255, 150, 75, 0.2),
+    rgba(255, 150, 75 , 0.2),
     transparent
   );
   filter: blur(6px);
@@ -388,12 +403,12 @@ padding: 2px 0px 0px 4px;
   top: 0;
   left: 30%;
   width: 40%;
-  height: 2px;
+  height: 1.6px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(8, 218, 19, 0.856),
-    rgba(101, 139, 10, 0.9),
+    rgba(127, 247, 189, 0.5),
+    rgba(127, 247, 189, 0.5),
     transparent
   );
   opacity: 0.6;
@@ -406,12 +421,12 @@ padding: 2px 0px 0px 4px;
   top: 0;
   left: 20%;
   width: 50%;
-  height: 15px;
+  height: 25px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(77, 134, 23, 0.3),
-    rgba(35, 148, 7, 0.3),
+    rgba(127, 247, 189, 0.15),
+    rgba(127, 247, 189, 0.15),
     transparent
   );
   filter: blur(6px);
@@ -488,7 +503,7 @@ padding: 2px 0px 0px 4px;
   width: 381px;
   height: 136px;
   z-index: 2;
-  transform: translateY(-40px);
+  transform: translateY(-41px);
   margin: auto;
   transition: all 0.4s ease-in-out;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -521,8 +536,8 @@ padding: 2px 0px 0px 4px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(150, 42, 172, 0.9),
-    rgba(190, 71, 194, 0.9),
+    rgba(181, 127, 247, 0.9),
+    rgba(181, 127, 247, 0.9),
     transparent
   );
   opacity: 0.6;
@@ -539,8 +554,8 @@ padding: 2px 0px 0px 4px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(138, 43, 175, 0.3),
-    rgba(135, 31, 177, 0.3),
+    rgba(181, 127, 247,0.3),
+    rgba(181, 127, 247,0.3),
     transparent
   );
   filter: blur(6px);
@@ -613,6 +628,9 @@ padding: 2px 0px 0px 4px;
   border-top: 1px solid rgba(80, 96, 243, 0.15);
   box-shadow: inset 0 4px 10px rgba(39, 80, 214, 0.12);
   overflow: hidden;
+
+
+  
 }
 
 .connection_brokerage_button button::before {
@@ -640,7 +658,7 @@ padding: 2px 0px 0px 4px;
   top: 0;
   left: 20%;
   width: 50%;
-  height: 12px;
+  height: 10px;
   background: linear-gradient(
     to right,
     transparent,
@@ -668,6 +686,8 @@ padding: 2px 0px 0px 4px;
 
 .connection_brokerage_button button:hover {
   box-shadow: inset 0 2px 6px rgba(197, 60, 197, 0.08);
+  transition: all 0.5s ease-in-out;
+
 }
 
 
@@ -707,7 +727,7 @@ padding: 2px 0px 0px 4px;
     top: 0%;
     left: 0%;
     right: 0%;
-    margin-top: -22%;
+    margin-top: -22.38%;
 }
 /* platform */
 .platform_cards{
