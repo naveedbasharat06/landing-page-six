@@ -142,7 +142,7 @@ const Hero = () => {
       </div>
 
       <div className="trading_trusted_partner relative">
-        <div className="relative overflow-hidden -translate-y-[186px] top-0 left-0 right-0">
+        <div className="relative overflow-hidden -translate-y-[192px] top-0 left-0 right-0">
         <div className="absolute inset-0 bg-white/5 z-10 pointer-events-none opacity-45"></div>
           <img
             id="hero_decorateBG_img"
@@ -161,7 +161,7 @@ const Hero = () => {
             alt="backround imag"
           />
           <div className="tradingIndex_trusted_partner">
-            <div className="trusted_partner_text">
+            <div className="trusted_partner_text transform scale-y-90">
               <span className="text-[#908e8e]">Trusted by</span>
               <span> students</span>
               <span className="text-[#908e8e]"> and</span>

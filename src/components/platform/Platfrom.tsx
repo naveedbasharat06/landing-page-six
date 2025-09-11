@@ -51,6 +51,7 @@ const Platfrom = () => {
     useState(false);
   const [isHoveredConnectionsList2, setIsHoveredConnectionList2] =
     useState(false);
+    const [tisTradingSummaryHosver, setisTradingSummaryHover] = useState(false);
 
   const text =
     width >= 810
@@ -88,7 +89,7 @@ const Platfrom = () => {
         <div className="platform_cards">
           <div className="platform_left_card z-10">
             <div
-              className="absolute bottom-1 left-0 right-0 h-[70%]"
+              className="absolute bottom-0 rounded-b-[20px] left-0 right-0 h-[70%]"
               style={{
                 backgroundImage: `url(${require("../../images/dotteddarkBg.jpg")})`,
                 backgroundSize: "cover",
@@ -132,14 +133,14 @@ const Platfrom = () => {
                     {width > 810 && <span className="mr-2"> ✨ </span>} Why did
                     $NVDA drop this week?
                   </h4>
-                  <p className="text-[#ffffff] opacity-90 font-light tracking-[-0.4px] text-sm max-w-full md:max-w-[400px] h-[115px] md:h-16">
+                  <p className="text-[#ffffff] font-manrope opacity-90 font-light tracking-[-0.4px] text-sm max-w-full md:max-w-[400px] h-[115px] md:h-16">
                     {width > 810 ? (
                       <Typewriter
                         words={[
                           `SNVDA saw a decline after earnings guidance missed analyst expectations Sector rotation also moved capital out of tech into value stocks`,
                         ]}
                         loop={true}
-                        typeSpeed={15}
+                        typeSpeed={10}
                         deleteSpeed={0}
                         delaySpeed={3000}
                         cursor
@@ -165,7 +166,7 @@ const Platfrom = () => {
                 <div
                   className={` relative bottom-0 ${
                     askQuestion ? "opacity-100" : "opacity-85"
-                  }  h-16 border border-[#343231]  rounded-b-[16px] text-sm bg-[#000] font-medium font-manrope flex justify-between items-center overflow-hidden px-5`}
+                  }  h-16 border border-[#343231] border-t-0  rounded-b-[16px] text-sm bg-[#000] font-medium font-manrope flex justify-between items-center overflow-hidden px-5`}
                   onMouseEnter={() => setAskQuestion(true)}
                   onMouseLeave={() => setAskQuestion(false)}
                 >
@@ -207,7 +208,7 @@ const Platfrom = () => {
           </div>
           <div className="platform_right_card">
             <div
-              className="absolute bottom-2 left-0 right-0 h-[70%] "
+              className="absolute bottom-0 rounded-b-[20px] left-0 right-0 h-[70%] "
               style={{
                 backgroundImage: `url(${require("../../images/dotteddarkBg.jpg")})`,
                 backgroundSize: "cover",
@@ -224,9 +225,12 @@ const Platfrom = () => {
                 data and actual market events.
               </p>
             </div>
-            <div>
+            <div
+              onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+            >
               <div className="relative w-10 mx-auto">
-                <button className="z-20 blur-[0.3px]  mx-auto ring-4 ring-[#ffffff26] shadow-lg  rounded-lg p-[11px]">
+                <button className="z-20 blur-[0.3px] mx-auto ring-4 ring-[#ffffff26] shadow-lg  rounded-lg p-[11px]">
                   <span className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[1px] w-[60%] bg-gradient-to-r from-transparent via-white to-transparent" />
 
                   <svg
@@ -244,8 +248,7 @@ const Platfrom = () => {
               </div>
               <button
                 className="relative lg:left-[-38px] w-[306px] h-[40px] border border-[#343231] bg-[#000000] mb-5 rounded-full px-9  text-[15px] font-manrope font-semibold leading-6 cursor-pointer"
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
+              
               >
                 <span className="relative inline-block">
                  
@@ -298,7 +301,6 @@ const Platfrom = () => {
                       style={{
                         color: "#7FF7BD",
                         marginRight: "8px",
-
                         fontSize: 18,
                       }}
                     />
@@ -306,10 +308,10 @@ const Platfrom = () => {
                   </h4>
                   <div className="pb-5">
                     <div className="flex gap-2">
-                    <h4 className="pb-2 text-sm text-[#D6D7D6] font-medium transform scale-y-90">
+                    <h4 className="pb-2 text-sm text-[#D6D7D6] font-manrope font-medium transform scale-y-90">
                       $SPY breakout — key drivers{" "}
                     </h4>
-                      <img src={forwardicon} style={{width: 15, height: 15}} alt="" />
+                      <img src={forwardicon} style={{width: 14, height: 15}} alt="" />
                       <span> 
                     </span>
                       </div>
@@ -326,8 +328,8 @@ const Platfrom = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="h-14 border border-[#363232] bg-[#000]  border-t-0 rounded-b-[16px] w-full z-20 relative">
-                  <div className="flex gap-3 py-[10px] px-4 justify-start border-t border-[#343231]">
+                <div className={`h-14 border border-[#363232] bg-[#000] ${width > 810 ? 'ml-[6%]' : 'ml-[0%]'} border-t-0 rounded-b-[16px] w-full z-20 relative`}>
+                  <div className="flex gap-3 py-[10px] px-4 justify-start ">
                     <button className="whitespace-nowrap font-manrope text-[#adadad] shadow-[inset_0px_0px_10px_1px_rgba(237,238,233,0.3)] transition-all duration-500 hover:ring-4 ring-[#ffffff26] leading-normal font-semibold opacity-80 blur-[0.3px] rounded-full px-[22px] py-[6px] text-sm">
                       <div className="absolute inset-0  flex-none border border-white/20 rounded-full"></div>
                       Top factors
@@ -377,8 +379,8 @@ const Platfrom = () => {
                 </div>
               </div>
               <div
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
+                onMouseEnter={() => setisTradingSummaryHover(true)}
+                onMouseLeave={() => setisTradingSummaryHover(false)}
               >
                 <div className="flatform_trading_summary_inner_content relative overflow-hidden transition-all duration-500 z-50">
                   <div className="trading_summary_card">
@@ -390,13 +392,13 @@ const Platfrom = () => {
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="flex flex-col gap-1">
-                        <p className="text-[#8f8e8d] text-xs leading-[20px] tracking-normal transform scale-y-95">
+                        <p className="text-[#8f8e8d] text-xs leading-[20px] font-medium font-manrope tracking-normal transform scale-y-95">
                           Winning trades
                         </p>
                         <div className="flex items-center gap-2">
                           <div className="w-3 text-center font-manrope text-base">
                             <AnimatePresence mode="wait">
-                              {hovered ? (
+                              {tisTradingSummaryHosver ? (
                                 <motion.div
                                   key="hoverText"
                                   initial={{ y: 15, opacity: 0 }}
@@ -427,20 +429,20 @@ const Platfrom = () => {
                               )}
                             </AnimatePresence>
                           </div>
-                          <span className="text-base text-[#adadad] font-manrope font-semibold pl-2">
+                          <span className="text-sm md:text-base text-[#adadad] font-manrope font-semibold pl-2">
                             {" "}
                             12 trades
                           </span>
                         </div>
                       </div>
                       <div className=" flex flex-col gap-1">
-                        <p className="text-[#8f8e8d] text-xs leading-[20px] tracking-normal">
+                        <p className="text-[#8f8e8d] text-xs leading-[20px] font-medium font-manrope tracking-normal">
                           Losing trades
                         </p>
                         <div className="flex items-center gap-2">
                           <div className="w-3 text-center font-manrope text-base">
                             <AnimatePresence mode="wait">
-                              {hovered ? (
+                              {tisTradingSummaryHosver ? (
                                 <motion.div
                                   key="hoverText"
                                   initial={{ y: 15, opacity: 0 }}
@@ -471,20 +473,20 @@ const Platfrom = () => {
                               )}
                             </AnimatePresence>
                           </div>
-                          <span className="text-base text-[#adadad]  font-manrope font-semibold pl-2">
+                          <span className="text-sm md:text-base text-[#adadad]  font-manrope font-semibold pl-2">
                             {" "}
                             3 trades
                           </span>
                         </div>
                       </div>
                       <div className=" flex flex-col gap-1">
-                        <p className="text-[#8f8e8d] text-xs leading-[20px] tracking-normal">
+                        <p className="text-[#8f8e8d] text-xs leading-[20px] font-medium font-manrope tracking-normal">
                           Held Positions
                         </p>
                         <div className="flex items-center gap-2">
                           <div className="w-3 text-center font-manrope text-base">
                             <AnimatePresence mode="wait">
-                              {hovered ? (
+                              {tisTradingSummaryHosver ? (
                                 <motion.div
                                   key="hoverText"
                                   initial={{ y: 15, opacity: 0 }}
@@ -494,7 +496,7 @@ const Platfrom = () => {
                                     duration: 0.3,
                                     ease: "easeInOut",
                                   }}
-                                  className="relative text-white "
+                                  className="relative text-white"
                                 >
                                   1.5
                                 </motion.div>
@@ -515,7 +517,7 @@ const Platfrom = () => {
                               )}
                             </AnimatePresence>
                           </div>
-                          <span className="text-base text-[#adadad]  font-manrope font-semibold pl-1">
+                          <span className="text-sm md:text-base text-[#adadad]  font-manrope font-semibold pl-1">
                             {" "}
                             5 Positions
                           </span>
@@ -545,14 +547,14 @@ const Platfrom = () => {
                   </div>
                   <button
                     className={`relative overflow-hidden bg-[#171615] text-[13px] font-manrope font-semibold rounded-full w-full py-2 transition-all duration-500 flex items-center justify-center ${
-                      hovered ? "bg-[#1C0F2E] text-[#c08cff]" : "text-[#d6d7d6]"
+                      tisTradingSummaryHosver ? "bg-[#1C0F2E] text-[#c08cff]" : "text-[#d6d7d6]"
                     }`}
                   >
                     <span className="absolute left-[32%]">✨</span>
                     <span className="relative h-[20px] flex items-center justify-center">
                       <span
                         className={`absolute transition-all duration-500 transform ${
-                          hovered
+                          tisTradingSummaryHosver
                             ? "-translate-y-full opacity-0"
                             : "translate-y-0 opacity-100"
                         }`}
@@ -561,7 +563,7 @@ const Platfrom = () => {
                       </span>
                       <span
                         className={`absolute transition-all duration-500 transform ${
-                          hovered
+                          tisTradingSummaryHosver
                             ? "translate-y-0 opacity-100"
                             : "translate-y-full opacity-0"
                         }`}
@@ -669,7 +671,7 @@ const Platfrom = () => {
                       key={item.Id}
                       className="mx-2 inline-flex items-center"
                     >
-                      <p className="bg-[#000] px-4 py-[14px] rounded-full border-4 border-[rgba(255,255,255,0.16)]">
+                      <p className="bg-[#000] px-[14px] py-[12px] rounded-full border-4 border-[rgba(255,255,255,0.16)]">
                         {item.partner_logo}
                       </p>
                     </div>
@@ -698,7 +700,7 @@ const Platfrom = () => {
                       key={item.Id}
                       className="mx-2 inline-flex items-center"
                     >
-                      <p className="bg-[#000] px-4 py-[14px] rounded-full border-4 border-[rgba(255,255,255,0.16)]">
+                      <p className="bg-[#000] px-[14px] py-[12px] rounded-full border-4 border-[rgba(255,255,255,0.16)]">
                         {item.partner_logo}
                       </p>
                     </div>
